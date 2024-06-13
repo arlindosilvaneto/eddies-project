@@ -1,0 +1,9 @@
+.env
+env
+*.csv
+.chainlit
+cache
+.files
+.exports
+__pycache__
+*.log

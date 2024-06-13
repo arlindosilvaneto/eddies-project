@@ -1,0 +1,5 @@
+pandas
+pandasai
+langchain
+python-dotenv
+chainlit
