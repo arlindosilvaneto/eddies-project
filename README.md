@@ -2,7 +2,11 @@
 
 Procurement Transaction ChatBot
 
-# Virtual Env and Dependencies
+## Main Workflow
+
+![Workflows](./static/eddies-project.png)
+
+## Virtual Env and Dependencies
 
 ```shell
 $ python3 -m venv env
@@ -10,7 +14,7 @@ $ source env/bin/activate
 $ pip install -r requirements.txt
 ```
 
-# Running Chainlit Interface
+## Running Chainlit Interface
 
 ```shell
 $ chainlit run main [-w]
@@ -18,7 +22,8 @@ $ chainlit run main [-w]
 
 > Use `-w` option for development and keep watching changes in the file
 
-# Running Local Server
+#
+3 Running Local Server
 
 ```shell
 $ python main.py
