@@ -6,4 +6,5 @@ cache
 .files
 .exports
 __pycache__
+.DS_Store
 *.log

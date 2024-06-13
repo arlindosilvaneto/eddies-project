@@ -4,13 +4,14 @@ from pandasai import SmartDataframe
 import pandas as pd
 import chainlit as cl
 from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
 import uvicorn
 
-load_dotenv
+load_dotenv()
 
 llm = ChatOpenAI()
 
-df = pd.read_csv("purchase_orders.csv")
+df = pd.read_csv("purchase_order_light.csv")
 
 agent = SmartDataframe(df, config={"llm": llm})
 
@@ -29,14 +30,18 @@ async def main(message: cl.Message):
 
 
 if __name__ == "__main__":
+
+    class Query(BaseModel):
+        message: str
+
     app = FastAPI()
 
     @app.post("/query")
-    async def receive_message(message: str):
+    def receive_message(body: Query):
         try:
-            result = await agent.chat(
+            result = agent.chat(
                 {
-                    "query": message,
+                    "query": body.message,
                 }
             )
 
